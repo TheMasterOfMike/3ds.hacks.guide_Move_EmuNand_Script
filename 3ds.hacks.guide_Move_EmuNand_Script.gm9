@@ -28,7 +28,7 @@ set PROGRESS "Now setting up... \n \n"
 set PROGRESS "$[PROGRESS][ ] Backup Essential Files\n"
 set PROGRESS "$[PROGRESS][ ] Backup DSiWare Saves\n"
 set PROGRESS "$[PROGRESS][ ] Restore EmuNAND to SysNAND\n"
-set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves\n"
+set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves"
 set PREVIEW_MODE $[PROGRESS]
 
 # Backup Essential Files
@@ -42,7 +42,7 @@ set PROGRESS "Now setting up... \n \n"
 set PROGRESS "$[PROGRESS][X] Backup Essential Files\n"
 set PROGRESS "$[PROGRESS][ ] Backup DSiWare Saves\n"
 set PROGRESS "$[PROGRESS][ ] Restore EmuNAND to SysNAND\n"
-set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves\n"
+set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves"
 set PREVIEW_MODE $[PROGRESS]
 
 # Backup DSiWare Saves
@@ -52,7 +52,7 @@ set PROGRESS "Now setting up... \n \n"
 set PROGRESS "$[PROGRESS][X] Backup Essential Files\n"
 set PROGRESS "$[PROGRESS][X] Backup DSiWare Saves\n"
 set PROGRESS "$[PROGRESS][ ] Restore EmuNAND to SysNAND\n"
-set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves\n"
+set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves"
 set PREVIEW_MODE $[PROGRESS]
 
 # Restore EmuNand to SysNand
@@ -76,7 +76,7 @@ set PROGRESS "Now setting up... \n \n"
 set PROGRESS "$[PROGRESS][X] Backup Essential Files\n"
 set PROGRESS "$[PROGRESS][X] Backup DSiWare Saves\n"
 set PROGRESS "$[PROGRESS][X] Restore EmuNAND to SysNAND\n"
-set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves\n"
+set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves"
 set PREVIEW_MODE $[PROGRESS]
 
 # Restore DSiWare Saves
@@ -86,7 +86,7 @@ set PROGRESS "Now setting up... \n \n"
 set PROGRESS "$[PROGRESS][X] Backup Essential Files\n"
 set PROGRESS "$[PROGRESS][X] Backup DSiWare Saves\n"
 set PROGRESS "$[PROGRESS][X] Restore EmuNAND to SysNAND\n"
-set PROGRESS "$[PROGRESS][X] Restore DSiWare Saves\n"
+set PROGRESS "$[PROGRESS][X] Restore DSiWare Saves"
 set PREVIEW_MODE $[PROGRESS]
 
 goto done
