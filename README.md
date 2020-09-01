@@ -1,4 +1,4 @@
-# 3ds.hacks.guide Setup Script
+# 3ds.hacks.guide Move EmuNand Script
 A GodMode9 script for automating some of the Move EmuNand steps on 3ds.hacks.guide.
 
 ## Instructions
