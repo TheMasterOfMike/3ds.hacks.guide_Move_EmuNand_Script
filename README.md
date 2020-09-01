@@ -2,7 +2,7 @@
 A GodMode9 script for automating some of the Move EmuNand steps on 3ds.hacks.guide.
 
 ## Instructions
-Copy the file "3ds.hacks.guide_Move_EmuNand_Script.gm9" to "\gm9\scripts\" on the SD card. Then open GodMode9, press the HOME button, choose "Scripts...", and choose "3ds.hacks.guide_Setup_Script". The script will let you know what to do from there.
+Copy the file "3ds.hacks.guide_Move_EmuNand_Script.gm9" to "\gm9\scripts\" on the SD card. Then open GodMode9, press the HOME button, choose "Scripts...", and choose "3ds.hacks.guide_Move_EmuNand_Script". The script will let you know what to do from there.
 
 ## Features
 The script performs the following actions:
