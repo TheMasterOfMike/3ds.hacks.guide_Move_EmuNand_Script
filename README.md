@@ -1,21 +1,16 @@
 # 3ds.hacks.guide Setup Script
-A GodMode9 script for automating some of the setup on 3ds.hacks.guide.
+A GodMode9 script for automating some of the Move EmuNand steps on 3ds.hacks.guide.
 
 ## Instructions
-Copy the file "3ds.hacks.guide_Setup_Script.gm9" to "\gm9\scripts" on the SD card. Then open GodMode9, press the HOME button, choose "Scripts...", and choose "3ds.hacks.guide_Setup_Script". The script will let you know what to do from there.
+Copy the file "3ds.hacks.guide_Move_EmuNand_Script.gm9" to "\gm9\scripts\" on the SD card. Then open GodMode9, press the HOME button, choose "Scripts...", and choose "3ds.hacks.guide_Setup_Script". The script will let you know what to do from there.
 
 ## Features
 The script performs the following actions:
-* Verify Files
-	* Verfies that all of the files the script needs are present.
-* Install CIAs
-	* Installs all CIAs in the SD card's "cias" directory.
-* Setup Luma3DS to CTRNAND
-	* Sets up Luma3DS in the NAND so the 3DS can boot without an SD card.
-* Clean Up Setup Files
-	* Cleans up files from the exploit the user performed, along with some other setup files.
-* Backup Essential Files
-	* Backup essential files to "\gm9\out" on the SD card.
+* Creates Nand Backups of Both the SysNand and EmuNand
+	* To allow the SysNand to be restored in the event the EmuNand Backup has issues.
+* Backup/Restore DSiWare Saves Automatically
+	* Copies the SysNand DSiWare Saves to \gm9\out\ then restores them after the EmuNand Restore has completed.
+* Automates the Move EmuNand process on 3ds.hacks.guide
 
 The script features the following:
 * Noob-proof
