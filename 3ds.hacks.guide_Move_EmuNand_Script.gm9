@@ -4,17 +4,17 @@ set PREVIEW_MODE "3ds.hacks.guide Setup Script\nBy HTV04, Forked by TheMasterOfM
 # By TheMasterOfMike, Fork of HTV04's Setup Script
 
 # Get NAND write permissions.
-echo "This script needs SD and NAND write permissions in\norder to perform some operations."
+echo "This script needs SD, SysNAND, and EmuNAND write permissions in\norder to perform some operations."
 if not allow 0:
 	echo "SD write permissions denied.\n \nAborting..."
 	goto end
 end
 if not allow 1:
-	echo "SysNand write permissions denied.\n \nAborting..."
+	echo "SysNAND write permissions denied.\n \nAborting..."
 	goto end
 end
 if not allow 4:
-	echo "EmuNand write permissions denied.\n \nAborting..."
+	echo "EmuNAND write permissions denied.\n \nAborting..."
 	goto end
 
 # Start setup.
@@ -24,21 +24,36 @@ if not ask "The process of moving the EmuNand\nto the SysNand will now begin\n \
 	goto end
 end
 
-set PREVIEW_MODE "Now setting up...\n \n[ ] Backup Essential Files\n[ ] Backup DSiWare Saves\n[ ] Restore EmuNand to SysNand\n[ ] Restore DSiWare Saves"
+set PROGRESS "Now setting up... \n \n"
+set PROGRESS "$[PROGRESS][ ] Backup Essential Files\n"
+set PROGRESS "$[PROGRESS][ ] Backup DSiWare Saves\n"
+set PROGRESS "$[PROGRESS][ ] Restore EmuNAND to SysNAND\n"
+set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves\n"
+set PREVIEW_MODE $[PROGRESS]
 
 # Backup Essential Files
 if not cp -h -w -n S:/nand_minsize.bin $[GM9OUT]/$[DATESTAMP]_$[SERIAL]_sysnand_??.bin
-	echo "SysNand backup failed, but don't worry!\n \nThis is likely just because your SD card doesn't have\nenough space.\n \nThere's a section on the guide for this, so just\nfollow that to backup your NAND manually."
+	echo "SysNAND backup failed, but don't worry!\n \nThis is likely just because your SD card doesn't have\nenough space.\n \nThere's a section on the guide for this, so just\nfollow that to backup your SysNAND manually."
 if not cp -h -w -n E:/nand_minsize.bin $[GM9OUT]/$[DATESTAMP]_$[SERIAL]_emunand_??.bin
-	echo "EmuNand backup failed, but don't worry!\n \nThis is likely just because your SD card doesn't have\nenough space.\n \nThere's a section on the guide for this, so just\nfollow that to backup your NAND manually."
+	echo "EmuNAND backup failed, but don't worry!\n \nThis is likely just because your SD card doesn't have\nenough space.\n \nThere's a section on the guide for this, so just\nfollow that to backup your EmuNAND manually."
 end
 
-set PREVIEW_MODE "Now setting up...\n \n[X] Backup Essential Files\n[ ] Backup DSiWare Saves\n[ ] Restore EmuNand to SysNand\n[ ] Restore DSiWare Saves"
+set PROGRESS "Now setting up... \n \n"
+set PROGRESS "$[PROGRESS][X] Backup Essential Files\n"
+set PROGRESS "$[PROGRESS][ ] Backup DSiWare Saves\n"
+set PROGRESS "$[PROGRESS][ ] Restore EmuNAND to SysNAND\n"
+set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves\n"
+set PREVIEW_MODE $[PROGRESS]
 
 # Backup DSiWare Saves
 cp -w -n 2:/title/00030004/ $[GM9OUT]/title/00030004/
 
-set PREVIEW_MODE "Now setting up...\n \n[X] Backup Essential Files\n[X] Backup DSiWare Saves\n[ ] Restore EmuNand to SysNand\n[ ] Restore DSiWare Saves"
+set PROGRESS "Now setting up... \n \n"
+set PROGRESS "$[PROGRESS][X] Backup Essential Files\n"
+set PROGRESS "$[PROGRESS][X] Backup DSiWare Saves\n"
+set PROGRESS "$[PROGRESS][ ] Restore EmuNAND to SysNAND\n"
+set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves\n"
+set PREVIEW_MODE $[PROGRESS]
 
 # Restore EmuNand to SysNand
 if not filesel "Select EmuNand Backup" $[GM9OUT]/*emunand_??.bin NANDBAK
@@ -57,18 +72,28 @@ imgumount
 rm -o -s 1:/data/$[SYSID0]/sysdata/00010011/00000000
 echo "EmuNand Successfully restored to SysNAND."
 
-set PREVIEW_MODE "Now setting up...\n \n[X] Backup Essential Files\n[X] Backup DSiWare Saves\n[X] Restore EmuNand to SysNand\n[ ] Restore DSiWare Saves"
+set PROGRESS "Now setting up... \n \n"
+set PROGRESS "$[PROGRESS][X] Backup Essential Files\n"
+set PROGRESS "$[PROGRESS][X] Backup DSiWare Saves\n"
+set PROGRESS "$[PROGRESS][X] Restore EmuNAND to SysNAND\n"
+set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves\n"
+set PREVIEW_MODE $[PROGRESS]
 
 # Restore DSiWare Saves
 cp -w -n 0:/gm9/out/title/00030004 2:/title/00030004
 
-set PREVIEW_MODE "Now setting up...\n \n[X] Backup Essential Files\n[X] Backup DSiWare Saves\n[X] Restore EmuNand to SysNand\n[X] Restore DSiWare Saves"
+set PROGRESS "Now setting up... \n \n"
+set PROGRESS "$[PROGRESS][X] Backup Essential Files\n"
+set PROGRESS "$[PROGRESS][X] Backup DSiWare Saves\n"
+set PROGRESS "$[PROGRESS][X] Restore EmuNAND to SysNAND\n"
+set PROGRESS "$[PROGRESS][X] Restore DSiWare Saves\n"
+set PREVIEW_MODE $[PROGRESS]
 
 goto done
 
 # Done!
 @done
-echo "Moving successful!\n \nBe sure to complete the Finalizing Setup guide that the\nguide links you to.\n \nHuge thanks to the awesome people who made\n3ds.hacks.guide, Luma3DS, GodMode9, and the\nGM9Megascript, which this script has derived some of\nitself from."
+echo "Move successful!\n \nBe sure to complete the "Finalizing Setup" guide that\nthe guide links you to.\n \nHuge thanks to the awesome people who made\n3ds.hacks.guide, Luma3DS, GodMode9, and the\nGM9Megascript, which this script has derived some of\nitself from."
 end
 
 # Exit.
