@@ -1,6 +1,6 @@
 set PREVIEW_MODE "3ds.hacks.guide Setup Script\nBy HTV04, Forked by TheMasterOfMike"
 
-# 3ds.hacks.guide Setup Script Move-Emu v0.1
+# 3ds.hacks.guide Setup Script Move-Emu v0.2
 # By TheMasterOfMike, Fork of HTV04's Setup Script
 
 # Get NAND write permissions.
@@ -70,7 +70,7 @@ cp -w -n I:/twln.bin S:/twln.bin
 cp -w -n I:/twlp.bin S:/twlp.bin
 imgumount
 rm -o -s 1:/data/$[SYSID0]/sysdata/00010011/00000000
-echo "EmuNand Successfully restored to SysNAND."
+echo "EmuNAND Successfully restored to SysNAND."
 
 set PROGRESS "Now setting up... \n \n"
 set PROGRESS "$[PROGRESS][X] Backup Essential Files\n"
