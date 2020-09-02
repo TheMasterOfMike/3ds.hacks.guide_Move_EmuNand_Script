@@ -1,6 +1,6 @@
 set PREVIEW_MODE "3ds.hacks.guide Setup Script\nBy HTV04, Forked by TheMasterOfMike"
 
-# 3ds.hacks.guide Setup Script Move-Emu v0.3
+# 3ds.hacks.guide Setup Script Move-Emu v0.4
 # By TheMasterOfMike, Fork of HTV04's Setup Script
 
 # Get NAND write permissions.
@@ -33,10 +33,19 @@ set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves"
 set PREVIEW_MODE $[PROGRESS]
 
 # Backup Essential Files
-if not cp -h -w -n S:/nand_minsize.bin $[GM9OUT]/$[DATESTAMP]_$[SERIAL]_sysnand_??.bin
+findnot $[GM9OUT]/$[DATESTAMP]_$[SERIAL]_sysnand_??.bin OUTPATH
+
+if	cp -h S:/nand_minsize.bin $[OUTPATH]
+	echo "Backup created successfully:\n$[OUTPATH]"
+else	
 	echo "SysNAND backup failed, but don't worry!\n \nThis is likely just because your SD card doesn't have\nenough space.\n \nThere's a section on the guide for this, so just\nfollow that to backup your SysNAND manually."
 end
-if not cp -h -w -n E:/nand_minsize.bin $[GM9OUT]/$[DATESTAMP]_$[SERIAL]_emunand_??.bin
+
+findnot $[GM9OUT]/$[DATESTAMP]_$[SERIAL]_emunand_??.bin OUTPATH
+
+if	cp -h E:/nand_minsize.bin $[OUTPATH]
+	echo "Backup created successfully:\n$[OUTPATH]"
+else
 	echo "EmuNAND backup failed, but don't worry!\n \nThis is likely just because your SD card doesn't have\nenough space.\n \nThere's a section on the guide for this, so just\nfollow that to backup your EmuNAND manually."
 end
 
