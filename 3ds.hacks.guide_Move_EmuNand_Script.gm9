@@ -4,7 +4,7 @@ set PREVIEW_MODE "3ds.hacks.guide Setup Script\nBy HTV04, Forked by TheMasterOfM
 # By TheMasterOfMike, Fork of HTV04's Setup Script
 
 # Get NAND write permissions.
-echo "This script needs SD, SysNAND, and EmuNAND write permissions in\norder to perform some operations."
+echo "This script needs SD, SysNAND, and EmuNAND write\npermissions in order to perform some operations."
 if not allow 0:
 	echo "SD write permissions denied.\n \nAborting..."
 	goto end
