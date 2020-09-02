@@ -35,6 +35,7 @@ set PREVIEW_MODE $[PROGRESS]
 # Backup Essential Files
 if not cp -h -w -n S:/nand_minsize.bin $[GM9OUT]/$[DATESTAMP]_$[SERIAL]_sysnand_??.bin
 	echo "SysNAND backup failed, but don't worry!\n \nThis is likely just because your SD card doesn't have\nenough space.\n \nThere's a section on the guide for this, so just\nfollow that to backup your SysNAND manually."
+end
 if not cp -h -w -n E:/nand_minsize.bin $[GM9OUT]/$[DATESTAMP]_$[SERIAL]_emunand_??.bin
 	echo "EmuNAND backup failed, but don't worry!\n \nThis is likely just because your SD card doesn't have\nenough space.\n \nThere's a section on the guide for this, so just\nfollow that to backup your EmuNAND manually."
 end
