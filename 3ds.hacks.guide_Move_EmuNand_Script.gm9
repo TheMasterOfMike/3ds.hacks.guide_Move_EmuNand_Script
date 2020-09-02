@@ -16,6 +16,7 @@ end
 if not allow 4:
 	echo "EmuNAND write permissions denied.\n \nAborting..."
 	goto end
+end
 
 # Start setup.
 @setup
