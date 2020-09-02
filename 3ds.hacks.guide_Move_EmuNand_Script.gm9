@@ -47,7 +47,7 @@ set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves"
 set PREVIEW_MODE $[PROGRESS]
 
 # Backup DSiWare Saves
-cp -w -n 2:/title/00030004/ $[GM9OUT]/title/00030004/
+cp -w -n 2:/title/00030004 $[GM9OUT]/title/00030004
 
 set PROGRESS "Now setting up... \n \n"
 set PROGRESS "$[PROGRESS][X] Backup Essential Files\n"
