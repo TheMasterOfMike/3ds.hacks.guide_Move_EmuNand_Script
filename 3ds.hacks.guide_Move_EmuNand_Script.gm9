@@ -35,17 +35,13 @@ set PREVIEW_MODE $[PROGRESS]
 # Backup Essential Files
 findnot $[GM9OUT]/$[DATESTAMP]_$[SERIAL]_sysnand_??.bin OUTPATH
 
-if	cp -h S:/nand_minsize.bin $[OUTPATH]
-	echo "Backup created successfully:\n$[OUTPATH]"
-else	
+if not cp -h S:/nand_minsize.bin $[OUTPATH]
 	echo "SysNAND backup failed, but don't worry!\n \nThis is likely just because your SD card doesn't have\nenough space.\n \nThere's a section on the guide for this, so just\nfollow that to backup your SysNAND manually."
 end
 
 findnot $[GM9OUT]/$[DATESTAMP]_$[SERIAL]_emunand_??.bin OUTPATH
 
-if	cp -h E:/nand_minsize.bin $[OUTPATH]
-	echo "Backup created successfully:\n$[OUTPATH]"
-else
+if not cp -h E:/nand_minsize.bin $[OUTPATH]
 	echo "EmuNAND backup failed, but don't worry!\n \nThis is likely just because your SD card doesn't have\nenough space.\n \nThere's a section on the guide for this, so just\nfollow that to backup your EmuNAND manually."
 end
 
@@ -67,11 +63,7 @@ set PROGRESS "$[PROGRESS][ ] Restore DSiWare Saves"
 set PREVIEW_MODE $[PROGRESS]
 
 # Restore EmuNand to SysNand
-if not filesel "Select EmuNand Backup" $[GM9OUT]/*emunand_??.bin NANDBAK
-	echo "Aborting..."
-end
-
-imgmount $[NANDBAK]
+imgmount $[OUTPATH]
 find I:/ctrnand_full.bin NULL
 find I:/twln.bin NULL
 find I:/twlp.bin NULL
