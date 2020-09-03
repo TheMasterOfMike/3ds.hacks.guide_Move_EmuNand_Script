@@ -96,7 +96,7 @@ goto done
 
 # Done!
 @done
-echo "Move successful!\n \nBe sure to complete the \"Finalizing Setup\" guide that\nthe guide links you to.\n \nHuge thanks to the awesome people who made\n3ds.hacks.guide, Luma3DS, GodMode9, and the\nGM9Megascript, which this script has derived some of\nitself from."
+echo "Move successful!\n \nBe sure to complete the 'Finalizing Setup' guide that\nthe guide links you to.\n \nHuge thanks to the awesome people who made\n3ds.hacks.guide, Luma3DS, GodMode9, and the\nGM9Megascript, which this script has derived some of\nitself from."
 end
 
 # Exit.
